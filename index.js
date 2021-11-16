@@ -1,15 +1,12 @@
 const months = ['Jan', 'February', 'March', 'April', 'May', 'June'];
 
-const replaceWithYerr = (arr, start, end) => {
+const replaceWithYerr = (arr, start = 0, end = arr.length) => {
     let newArr = [];
     for (let i = 0; i <= arr.length - 1; i++) {
-        newArr.push(arr[i]);
-      if (start === undefined && end === undefined) {
-            newArr.fill('yerr');
-        } else if (end === undefined) {
-            newArr.fill('yerr', start, arr.length);
+      if (i >= start && i < start + end) {
+            newArr.push('yerr');
         } else {
-            newArr.fill('yerr', start, end + 1);
+            newArr.push(arr[i]);
         }
     } 
     
